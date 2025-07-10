@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/khanh2006/Documents/VSCODEproject/code'
+relocations:     []
+...

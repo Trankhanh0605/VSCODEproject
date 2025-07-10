@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build code",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-g",                                // tạo debug symbols
+        "-O0",                               // tắt tối ưu hóa
+        "${file}",                           // file hiện tại
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
