@@ -1,31 +1,43 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Debug code.cpp with GDB",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${fileDirname}/${fileBasenameNoExtension}",
-      "args": [],
-      "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
-      "environment": [],
-      "externalConsole": false,
-      "MIMode": "gdb",
-      "miDebuggerPath": "/opt/homebrew/bin/gdb",
-      "preLaunchTask": "build code",
-      "setupCommands": [
+    "version": "0.2.0",
+    "configurations": [
         {
-          "description": "Tell GDB to use ARM64",
-          "text": "set architecture aarch64",
-          "ignoreFailures": true
+            "name": "Debug code.cpp with GDB",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/opt/homebrew/bin/gdb",
+            "preLaunchTask": "build code",
+            "setupCommands": [
+                {
+                    "description": "Tell GDB to use ARM64",
+                    "text": "set architecture aarch64",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Enable pretty-printing for GDB",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
         },
         {
-          "description": "Enable pretty-printing for GDB",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
+            "name": "(lldb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/a.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
         }
-      ]
-    }
-  ]
+    ]
 }
