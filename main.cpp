@@ -12,6 +12,7 @@ int main()
     gradeBook2.displayMessage();
     gradeBook3.determineClassAverage();
     mygB.displayMessage();
+    mygB.determineClassAverage();
     mygB.inputGrades();
     mygB.displayGradesReport();
 
