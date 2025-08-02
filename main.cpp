@@ -11,10 +11,6 @@ int main()
     cout << gradeBook1.getCourseName() << endl;
     gradeBook2.displayMessage();
     gradeBook3.determineClassAverage();
-    mygB.displayMessage();
-    mygB.determineClassAverage();
-    mygB.inputGrades();
-    mygB.displayGradesReport();
-
+    
     return 0;
 }
