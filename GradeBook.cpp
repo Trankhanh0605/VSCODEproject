@@ -4,15 +4,14 @@
 using namespace std;
 GradeBook::GradeBook(string name){
     setCourseName(name);
-    aCount=0;
-    bCount=0;
-    cCount=0;
-    dCount=0;
-    fCount=0;
+   maximumGrade=0;
 }
 void GradeBook::setCourseName(string name) {
     if (name.length()<=25) courseName=name;
-    else courseName=name.substr(0,25);
+    else {
+        courseName=name.substr(0,25);
+        cout << "Name \"" << name << "\" exceeds maximum length (25).\n" << "Limiting courseName to first 25 characters.\n" << endl;
+    }
 }
 string GradeBook::getCourseName() {
     return courseName;
@@ -48,48 +47,26 @@ void GradeBook::determineClassAverage() {
 
 
 void GradeBook::inputGrades() {
-    int grade;
-    cout<< "Enter grade: " <<endl;
-    cout<< "Enter the EOF: "<<endl;
-    while ((grade =cin.get())!=EOF) {
-        switch (grade) {
-            case 'A':
-            case 'a': 
-            aCount++;
-            break;
-            case 'B':
-            case 'b':
-            bCount++;
-            break;
-            case 'C':
-            case 'c':
-            cCount++;
-            break;
-            case 'D':
-            case 'd':
-            dCount++;
-            break;
-            case 'F':
-            case 'f': 
-            fCount++;
-            break;
-            case '\n':
-            case '\t':
-            case ' ': 
-            break;
-            default: cout << "Incorrect letter grade entered." << " Enter a new grade." << endl;
-            break;
-        }
-    }
+    int grade1; 
+    int grade2; 
+    int grade3;
+    cout<<"Enter grade: ";
+    cin>>grade1;
+    cout<<"Enter grade: ";
+    cin>>grade2;
+    cout<<"Enter grade: ";
+    cin>>grade3;
+    maximumGrade=maximum(grade1, grade2, grade3);
+}
+
+int GradeBook:: maximum (int a, int b, int c) {
+int maxValue=a;
+if (b>maxValue) maxValue=b;
+if (c>maxValue) maxValue=c;
+return maxValue;
 }
 
 void GradeBook::displayGradesReport() {
-    cout << "\n\nNumber of students who received each letter grade:"
-    << "\nA: " << aCount
-    << "\nB: " << bCount
-    << "\nC: " << cCount
-    << "\nD: " << dCount
-    << "\nF: " << fCount
-    << endl;
+    cout<<"Maximum of grades entered: "<<maximumGrade<<endl;
 }
 

@@ -3,11 +3,7 @@ using namespace std;
 class GradeBook {
     private: 
     string courseName;
-    int aCount;
-    int bCount; 
-    int cCount;
-    int dCount;
-    int fCount;
+    int maximumGrade;
     public: 
     GradeBook(string);
     void setCourseName(string);
@@ -16,4 +12,5 @@ class GradeBook {
     void determineClassAverage();
     void inputGrades(); 
     void displayGradesReport();
+    int maximum(int, int, int);
 };
