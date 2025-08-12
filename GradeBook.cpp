@@ -2,6 +2,17 @@
 #include "GradeBook.h"
 #include <iomanip>
 using namespace std;
+
+GradeBook::GradeBook(string name, const int gradesArray[]) {
+    setCourseName(name);
+    for (int i=0; i<students; i++) {
+        // copy grades from gradesArray to grades data member
+        grades[i]=gradesArray[i];
+    } // end GradeBook constructor
+}
+
+
+
 GradeBook::GradeBook(string name){
     setCourseName(name);
    maximumGrade=0;

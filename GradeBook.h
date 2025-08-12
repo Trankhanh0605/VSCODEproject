@@ -1,10 +1,15 @@
 #include <string>
 using namespace std; 
 class GradeBook {
-    private: 
-    string courseName;
-    int maximumGrade;
+
     public: 
+
+    static const int students=10;
+    //Constructor initializes course name and array of grades
+    GradeBook(string, const int []); 
+
+    
+
     GradeBook(string);
     void setCourseName(string);
     string getCourseName();
@@ -13,4 +18,11 @@ class GradeBook {
     void inputGrades(); 
     void displayGradesReport();
     int maximum(int, int, int);
+
+
+    private: 
+    string courseName;
+    int maximumGrade;
+
+    int grades[students];
 };
